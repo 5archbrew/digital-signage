@@ -40,6 +40,7 @@ export default class DraftBoardModule extends SignageModule {
     }
     const b = tap.beer;
     const price = b.prices.price16 ? `$${b.prices.price16.toFixed(2)}` : '';
+    const glass = b.glass;
     return `
       <article class="tap-card ${tap.isOnDeck ? 'tap-card--on-deck' : ''}">
         <div class="tap-card__number">${tap.tapNumber}</div>
@@ -48,6 +49,10 @@ export default class DraftBoardModule extends SignageModule {
           <p class="tap-card__style">${escapeHtml(b.style)}</p>
           <div class="tap-card__meta">
             <span class="tap-card__abv">${b.abv != null ? b.abv + '% ABV' : ''}</span>
+            <span class="tap-card__glass">
+              ${glass && glass.imageUrl ? `<img class="tap-card__glass-icon" src="${escapeAttr(glass.imageUrl)}" alt="" />` : ''}
+              ${glass && glass.name ? `<span class="tap-card__glass-name">${escapeHtml(glass.name)}</span>` : ''}
+            </span>
             <span class="tap-card__price">${price}</span>
           </div>
         </div>
@@ -60,4 +65,8 @@ function escapeHtml(str) {
   const div = document.createElement('div');
   div.textContent = str == null ? '' : String(str);
   return div.innerHTML;
+}
+
+function escapeAttr(str) {
+  return escapeHtml(str).replace(/"/g, '&quot;');
 }
