@@ -1,0 +1,58 @@
+.brew-ops__title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: calc(var(--unit) * 2);
+}
+.brew-ops__columns {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: calc(var(--unit) * 2);
+  min-height: 0;
+}
+body.orientation-portrait .brew-ops__columns {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.4fr 1fr;
+}
+.brew-ops__batches, .brew-ops__inventory {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: calc(var(--unit) * 1.5);
+  overflow: hidden;
+}
+.brew-ops__batches h2, .brew-ops__inventory h2 {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: calc(var(--unit) * 1);
+}
+.batch-row, .inventory-row {
+  padding: calc(var(--unit) * 1) 0;
+  border-bottom: 1px solid var(--color-surface-alt);
+}
+.batch-row__name {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.batch-row__style {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+.batch-row__stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+.inventory-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05rem;
+}
+.brew-ops__empty {
+  color: var(--color-text-muted);
+}
