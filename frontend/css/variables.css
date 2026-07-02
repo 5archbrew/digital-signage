@@ -1,0 +1,26 @@
+:root {
+  /* Overridden at runtime from /api/settings by app.js; these are
+     just the pre-first-paint fallbacks. */
+  --color-primary: #f7931e;
+  --color-bg: #0b0d10;
+  --color-accent: #3ddc97;
+
+  --color-surface: #16191d;
+  --color-surface-alt: #1f2328;
+  --color-text: #f5f5f2;
+  --color-text-muted: #9aa1a9;
+  --color-danger: #e5484d;
+
+  --font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+
+  /* Base unit scales with viewport so a 4K panel and a 1080p panel
+     render proportionally identical layouts. */
+  --unit: clamp(0.6rem, 0.55vw, 1.4rem);
+
+  --radius-sm: calc(var(--unit) * 0.6);
+  --radius-md: calc(var(--unit) * 1.2);
+  --radius-lg: calc(var(--unit) * 2);
+
+  --transition-fast: 200ms ease;
+  --transition-medium: 600ms ease;
+}

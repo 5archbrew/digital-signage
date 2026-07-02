@@ -1,0 +1,107 @@
+.draft-board {
+  gap: calc(var(--unit) * 2);
+}
+.draft-board__title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-primary);
+}
+.draft-board__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-auto-rows: 1fr;
+  gap: calc(var(--unit) * 1.5);
+  overflow: hidden;
+}
+
+body.orientation-portrait .draft-board__grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tap-card {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: calc(var(--unit) * 1.5);
+  display: flex;
+  gap: calc(var(--unit) * 1.2);
+  align-items: flex-start;
+  overflow: hidden;
+  animation: cardIn 500ms ease both;
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(0.6rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tap-card__number {
+  flex-shrink: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #111;
+  font-weight: 800;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tap-card__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.tap-card__badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--color-accent);
+  color: #111;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+}
+.tap-card__style {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+.tap-card__meta {
+  margin-top: calc(var(--unit) * 1);
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.tap-card__price {
+  color: var(--color-primary);
+}
+.tap-card__ribbon {
+  position: absolute;
+  top: 0.8rem;
+  right: -1.9rem;
+  transform: rotate(35deg);
+  background: var(--color-accent);
+  color: #111;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.2rem 2.4rem;
+}
+.tap-card--empty {
+  opacity: 0.45;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.tap-card__empty-label {
+  color: var(--color-text-muted);
+  margin-top: 0.4rem;
+}
