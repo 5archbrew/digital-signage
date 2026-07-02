@@ -1,5 +1,4 @@
 .iframe-module {
-  position: relative;
   padding: 0 !important; /* full-bleed, unlike the other modules */
 }
 .iframe-module__frame {
