@@ -75,9 +75,31 @@ body.orientation-portrait .draft-board__grid {
 .tap-card__meta {
   margin-top: calc(var(--unit) * 1);
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: calc(var(--unit) * 1);
   font-size: 1.05rem;
   font-weight: 600;
+}
+.tap-card__glass {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-size: 0.9rem;
+  min-width: 0;
+}
+.tap-card__glass-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.tap-card__glass-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .tap-card__price {
   color: var(--color-primary);
