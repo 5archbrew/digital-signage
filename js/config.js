@@ -7,7 +7,7 @@
  * touching the Pi.
  */
 export const CONFIG = {
-  API_BASE_URL: 'https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec',
+  API_BASE_URL: 'https://script.google.com/macros/s/AKfycbw5k5TrCYET6zp5UZhAJGc9aGo3olmZj2YwdAJz3StCfoZXVDZA98jynJpBOlDUijqO_g/exec',
 
   // Used only until /api/settings responds for the first time.
   DEFAULTS: {
