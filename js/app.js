@@ -18,8 +18,7 @@ async function main() {
   applyOrientation(settings);
 
   const manager = new ModuleManager({
-    stageA: document.getElementById('stage-a'),
-    stageB: document.getElementById('stage-b'),
+    stageRoot: document.getElementById('stage'),
     apiClient,
     settings
   });
