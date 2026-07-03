@@ -39,8 +39,17 @@ export default class DraftBoardModule extends SignageModule {
         </article>`;
     }
     const b = tap.beer;
-    const price = b.prices.price16 ? `$${b.prices.price16.toFixed(2)}` : '';
-    const glass = b.glass;
+
+    // Only tiers with an actual price on this beer get shown --
+    // e.g. a beer with no PriceGrowler set just omits that badge.
+    const priceTiers = [
+      { price: b.prices.price16, glass: b.glass, fallbackLabel: 'Pour' },
+      { price: b.prices.price4, glass: b.tasterGlass, fallbackLabel: '4oz' },
+      { price: b.prices.priceGrowler, glass: b.growlerGlass, fallbackLabel: 'Growler' }
+    ].filter((tier) => tier.price != null && tier.price !== '');
+
+    const pricingHtml = priceTiers.map((tier) => this._priceBadge(tier)).join('');
+
     return `
       <article class="tap-card ${tap.isOnDeck ? 'tap-card--on-deck' : ''}">
         <div class="tap-card__number">${tap.tapNumber}</div>
@@ -49,15 +58,24 @@ export default class DraftBoardModule extends SignageModule {
           <p class="tap-card__style">${escapeHtml(b.style)}</p>
           <div class="tap-card__meta">
             <span class="tap-card__abv">${b.abv != null ? b.abv + '% ABV' : ''}</span>
-            <span class="tap-card__glass">
-              ${glass && glass.imageUrl ? `<object class="tap-card__glass-icon" type="image/svg+xml" data="${escapeAttr(glass.imageUrl)}" aria-hidden="true"></object>` : ''}
-              ${glass && glass.name ? `<span class="tap-card__glass-name">${escapeHtml(glass.name)}</span>` : ''}
-            </span>
-            <span class="tap-card__price">${price}</span>
           </div>
+          <div class="tap-card__pricing">${pricingHtml}</div>
         </div>
         ${tap.isOnDeck ? '<div class="tap-card__ribbon">On Deck</div>' : ''}
       </article>`;
+  }
+
+  _priceBadge(tier) {
+    const label = (tier.glass && tier.glass.name) ? tier.glass.name : tier.fallbackLabel;
+    const amount = `$${Number(tier.price).toFixed(2)}`;
+    return `
+      <span class="tap-card__price-badge">
+        ${tier.glass && tier.glass.imageUrl
+          ? `<object class="tap-card__glass-icon" type="image/svg+xml" data="${escapeAttr(tier.glass.imageUrl)}" aria-hidden="true"></object>`
+          : ''}
+        <span class="tap-card__price-label">${escapeHtml(label)}</span>
+        <span class="tap-card__price-amount">${amount}</span>
+      </span>`;
   }
 }
 
