@@ -30,7 +30,7 @@ export default class EventsModule extends SignageModule {
       this.list.innerHTML = '<p class="events-module__empty">No upcoming events.</p>';
       return;
     }
-    this.list.innerHTML = items.slice(0, 6).map((ev) => {
+    this.list.innerHTML = items.slice(0, 4).map((ev) => {
       const start = new Date(ev.startDateTime);
       const month = start.toLocaleDateString('en-US', { month: 'short' });
       const day = start.toLocaleDateString('en-US', { day: 'numeric' });
