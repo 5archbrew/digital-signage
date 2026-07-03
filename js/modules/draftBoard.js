@@ -50,7 +50,7 @@ export default class DraftBoardModule extends SignageModule {
           <div class="tap-card__meta">
             <span class="tap-card__abv">${b.abv != null ? b.abv + '% ABV' : ''}</span>
             <span class="tap-card__glass">
-              ${glass && glass.imageUrl ? `<object class="tap-card__glass-icon" viewBox="0 0 100 100" type="image/svg+xml" data="${escapeAttr(glass.imageUrl)}" alt="" />` : ''}
+              ${glass && glass.imageUrl ? `<object class="tap-card__glass-icon" type="image/svg+xml" data="${escapeAttr(glass.imageUrl)}" aria-hidden="true"></object>` : ''}
               ${glass && glass.name ? `<span class="tap-card__glass-name">${escapeHtml(glass.name)}</span>` : ''}
             </span>
             <span class="tap-card__price">${price}</span>
