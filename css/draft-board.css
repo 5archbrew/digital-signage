@@ -129,7 +129,7 @@ body.orientation-portrait .draft-board__grid {
 }
 svg path {
   fill: var(--color-surface);        /* Changes the background color */
-  stroke: var(--color-text-muted);      /* Changes the outline color */
-  stroke-width: 5px;    /* Adjusts the outline thickness */
+  stroke: #111;      /* Changes the outline color */
+  stroke-width: 3px;    /* Adjusts the outline thickness */
   transition: fill 0.3s ease;
 }
