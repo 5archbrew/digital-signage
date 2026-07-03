@@ -8,7 +8,7 @@
   --color-surface: #16191d;
   --color-surface-alt: #1f2328;
   --color-text: #f5f5f2;
-  --color-text-muted: #9aa1a9;
+  --color-text-muted: #b7bec5;
   --color-danger: #e5484d;
 
   --font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
@@ -23,4 +23,5 @@
 
   --transition-fast: 200ms ease;
   --transition-medium: 600ms ease;
+  --icon-tone: 0.94;
 }
