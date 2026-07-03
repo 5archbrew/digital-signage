@@ -7,8 +7,8 @@
 .events-module__list {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-  gap: calc(var(--unit) * 1.5);
+  grid-template-columns: repeat(auto-fit, minmax(42rem, 1fr));
+  gap: calc(var(--unit) * 2.5);
   align-content: start;
   overflow: hidden;
 }
@@ -18,14 +18,14 @@ body.orientation-portrait .events-module__list {
 .event-card {
   background: var(--color-surface);
   border-radius: var(--radius-lg);
-  padding: calc(var(--unit) * 1.4);
+  padding: calc(var(--unit) * 2.8);
   display: flex;
-  gap: calc(var(--unit) * 1.2);
+  gap: calc(var(--unit) * 2.4);
 }
 .event-card__date {
   flex-shrink: 0;
-  width: 4rem;
-  height: 4rem;
+  width: 7.5rem;
+  height: 7.5rem;
   border-radius: var(--radius-md);
   background: var(--color-primary);
   color: #111;
@@ -36,28 +36,28 @@ body.orientation-portrait .events-module__list {
   line-height: 1;
 }
 .event-card__month {
-  font-size: 0.75rem;
+  font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 .event-card__day {
-  font-size: 1.5rem;
+  font-size: 2.9rem;
   font-weight: 800;
 }
 .event-card__title {
-  font-size: 1.3rem;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 .event-card__meta {
   color: var(--color-accent);
-  font-size: 0.95rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  margin-top: 0.15rem;
+  margin-top: 0.3rem;
 }
 .event-card__description {
   color: var(--color-text-muted);
-  font-size: 0.95rem;
-  margin-top: 0.4rem;
+  font-size: 1.8rem;
+  margin-top: 0.8rem;
   line-height: 1.35;
 }
 .events-module__empty {
