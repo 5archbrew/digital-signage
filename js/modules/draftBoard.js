@@ -13,6 +13,7 @@ export default class DraftBoardModule extends SignageModule {
     `;
     this.grid = this.container.querySelector('#draft-grid');
     this.stopPoll = null;
+    this.lastRenderedKey = null;
   }
 
   start() {
@@ -27,6 +28,18 @@ export default class DraftBoardModule extends SignageModule {
 
   _render(data) {
     const taps = data.taps || [];
+
+    // Every poll fetches fresh JSON even when nothing actually
+    // changed on the sheet -- re-writing identical HTML would still
+    // retrigger each card's entrance animation, which reads as a
+    // pointless flash every poll cycle. Skip the DOM write entirely
+    // when the tap list is unchanged; only a real change (new beer,
+    // price update, tap added/removed) replaces the grid and plays
+    // the animation.
+    const key = JSON.stringify(taps);
+    if (key === this.lastRenderedKey) return;
+    this.lastRenderedKey = key;
+
     this.grid.innerHTML = taps.map((tap) => this._tapCard(tap)).join('');
   }
 
