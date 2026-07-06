@@ -56,14 +56,14 @@ body.orientation-portrait .draft-board__grid {
 }
 
 .tap-card__name {
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.01em;
 }
 .tap-card__badge {
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   background: var(--color-accent);
@@ -75,7 +75,7 @@ body.orientation-portrait .draft-board__grid {
 }
 .tap-card__style {
   color: var(--color-text-muted);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   margin-top: 0.25rem;
 }
@@ -84,7 +84,7 @@ body.orientation-portrait .draft-board__grid {
   margin-top: calc(var(--unit) * 1.1);
 }
 .tap-card__abv {
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-accent);
 }
@@ -105,20 +105,20 @@ body.orientation-portrait .draft-board__grid {
   line-height: 1;
 }
 .tap-card__glass-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   flex-shrink: 0;
   object-fit: contain;
   filter: brightness(0) invert(var(--icon-tone));
 }
 .tap-card__price-label {
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   font-weight: 600;
   color: var(--color-text-muted);
   white-space: nowrap;
 }
 .tap-card__price-amount {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: var(--color-primary);
   white-space: nowrap;
@@ -131,7 +131,7 @@ body.orientation-portrait .draft-board__grid {
   transform: rotate(35deg);
   background: var(--color-accent);
   color: #111;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 800;
   text-transform: uppercase;
   padding: 0.2rem 2.4rem;
