@@ -38,13 +38,13 @@ body.orientation-portrait .draft-board__grid {
 
 .tap-card__number {
   flex-shrink: 0;
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 3.2rem;
+  height: 3.2rem;
   border-radius: 50%;
   background: var(--color-primary);
   color: #111;
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,9 +56,9 @@ body.orientation-portrait .draft-board__grid {
 }
 
 .tap-card__name {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.5;
   letter-spacing: -0.01em;
 }
 .tap-card__badge {
